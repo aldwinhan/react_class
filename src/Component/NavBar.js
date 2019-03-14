@@ -56,11 +56,18 @@ class NavBar extends React.Component{
                     <MenuIcon />
                 </IconButton> */}
                 <Typography variant="h6" color="inherit" className={classes.grow}>
-                    Qtemu
+                    {this.props.title}
                 </Typography>
                 <Tabs value={value} onChange={this.handleChange} className={classes.menu}>
-                    <Tab label="Create Metup" />
-                    <Tab label="Explore" />
+                    {
+                      this.props.menu.map((val,idx)=>{
+                        return(
+                          <React.Fragment key={idx}>
+                            <Tab label={val.li} />
+                          </React.Fragment>
+                        )
+                      })
+                    }
                 </Tabs>
                 {/* <Typography  color="inherit" className={classes.grow} textAlign="left">
                     News

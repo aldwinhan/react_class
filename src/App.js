@@ -11,10 +11,25 @@ import PastMeetups from './Component/PastMeetups'
 import Footer from './Component/Footer'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      title: 'Qtemu',
+      menu: [
+        {        
+          li: 'CREATE MEETUP',
+        },
+        {        
+          li: 'EXPLORE',            
+        }
+      ]    
+    }
+  }
+
   render() {
     return (
       <div>
-        <NavBar/>
+        <NavBar menu={this.state.menu} title={this.state.title}/>
         <div style={{padding:'15px'}}>
             <MediaCard/>
         </div>
